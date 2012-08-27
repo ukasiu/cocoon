@@ -74,6 +74,7 @@ module Cocoon
 
         new_object = create_object(f, association)
         html_options[:'data-template'] = CGI.escapeHTML(render_association(association, f, new_object, render_options, override_partial)).html_safe
+        html_options[:id] = association.to_s.pluralize + '_add_item_href'
 
         link_to(name, '#', html_options )
       end
