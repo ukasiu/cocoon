@@ -49,7 +49,7 @@
     // code and doesn't force it to be a sibling like after/before does. default: 'before'
     insertionNode[insertionMethod](contentNode);
 
-    insertionNode.trigger('insertion-callback');
+    $this.parent().trigger('insertion-callback', [new_id, 'sth']);
   });
 
   $('.remove_fields.dynamic').live('click', function(e) {
